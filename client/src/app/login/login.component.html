@@ -1,0 +1,123 @@
+
+
+<br /><br /><br /><br />
+
+<div class="container">
+  <div class="row">
+   
+    <div class="col-xs-12 col-lg-8 col-sm-12 col-md-8">
+      <h4>LOGIN FORM</h4>
+      <form #signupForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        
+        <br />
+        
+        <div
+          *ngIf="isInvalid"
+          class="alert alert-danger alert-dismissible fade show"
+          style="background-color: #f8d7da; color: #8b3e46"
+          role="alert"
+        >
+          <strong>Hey!</strong> &nbsp; {{ _msg }}
+          <button
+            type="button"
+            class="close"
+            style="line-height: 1.6"
+            data-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div
+          *ngIf="validCred"
+          class="alert alert-warning alert-dismissible fade show"
+          style="background-color: #d4edda; color: #155724"
+          role="alert"
+        >
+          <strong>Hey!</strong> &nbsp; {{ _msg }}
+          <button
+            type="button"
+            class="close"
+            data-dismiss="alert"
+            style="line-height: 1.6"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-offset-0 col-lg-12 col-md-12 col-xs-12 col-sm-12">
+            <div class="form-group">
+              <label for="email">Email<span style="color: red">*</span></label>
+              <input
+                type="email"
+                class="form-control px-3"
+                id="email"
+                name="email"
+                #email="ngModel"
+                [class.is-invalid]="email.invalid && email.touched"
+                placeholder="email@domain.com"
+                required
+                [(ngModel)]="userModel.email"
+              />
+              <small
+                style="color: red"
+                [class.d-none]="email.valid || email.untouched"
+                >Email is required</small
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-offset-0 col-lg-12 col-md-12 col-xs-12 col-sm-12">
+            <div class="form-group">
+              <label for="password"
+                >Password<span style="color: red">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control px-3"
+                id="password"
+                name="password"
+                required
+                #password="ngModel"
+                [class.is-invalid]="password.invalid && password.touched"
+                placeholder="Password"
+                [(ngModel)]="userModel.password"
+              />
+              <small
+                style="color: red"
+                [class.d-none]="password.valid || password.untouched"
+                >Password is required</small
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="pull-right">
+          <br>
+          <br>
+          <div class="vertical-center">
+          <button
+            type="submit"
+            class="btn btn-primary btn-block btn-large"
+            style="margin: 0.4rem 0rem"
+          >
+            {{ "login" | uppercase }}
+          </button>
+        </div>
+        </div>
+      </form>
+      <hr />
+     
+    </div>
+  </div>
+  <br />
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+

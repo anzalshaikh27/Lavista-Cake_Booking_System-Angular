@@ -1,0 +1,17 @@
+.btn{
+    background-color: #4fbfa8;
+    
+  }
+
+  .vertical-center {
+    margin: 0;
+    position: relative;
+    
+    -ms-transform: translateY(50%);
+    transform: translateY(0%);
+  }
+  
+  .container{
+    background-color: rgb(252, 252, 250);
+  }
+  

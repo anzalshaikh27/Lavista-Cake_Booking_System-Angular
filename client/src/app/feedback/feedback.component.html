@@ -1,0 +1,72 @@
+
+<br>
+ 
+<div class="container">
+
+    <div>
+        <h2 style="text-align: center; color:rgb(94,0,0)"><b>PLEASE GIVE FEEDBACK</b> </h2>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" style="align-items: center;" name="searchsText" placeholder="Search" [(ngModel)]="searchText">
+    </div>
+    <hr>
+
+    <div *ngIf="isLogggedIn; then userLogged else userNotLogged"></div>
+    <ng-template #userLogged> <h5>Feedback by:  {{current_user | uppercase}}</h5> </ng-template>
+    <ng-template #userNotLogged>Not logged in</ng-template>
+    
+    
+    <button><a routerLink="/insert-feedback" routerLinkActive="activeS"><b>Post New Feedback</b></a></button>
+
+    <br>
+    <br>
+      <div class="row" *ngFor="let post of data | filter:searchText index as i">
+
+    
+            <div class="col-6">
+                
+                    <h3>{{post.post_title }}</h3>
+                
+                <p>{{post.post_description}}</p>
+    
+                
+                <button><a href="update-feedback/">Edit</a></button> &nbsp;&nbsp;&nbsp;&nbsp;
+                <button><a href="delete-feedback/">Delete</a></button>
+                <br>
+                <br>
+                
+                
+            </div>  
+            
+        
+       
+
+      </div>
+
+      <hr class="invis">
+                                
+    <div class="blog-meta big-meta col-md-8">
+        <h4>LEOPARD PRINT BUTTERCREAM CAKE</h4>
+        
+        <p>You can make your leopard spots as large or as small as you like depending on the size of your project. I made mine .5 to 1-inch in diameter.</p>
+        
+    </div>
+
+    <hr class="invis">
+
+
+                                <div class="blog-meta big-meta col-md-8">
+                                    <h4>SPRINKLE GIRL CAKE
+                                    </h4>
+                                    <p>I am officially obsessed with these little sprinkle-haired cuties. A few years ago cakes featuring girls with hair made of berries and fresh fruit started popping up all over instagram.</p>
+                                    
+                                </div>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    

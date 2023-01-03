@@ -1,0 +1,73 @@
+<br>
+<br>
+
+<section class="title-sec" style="color: rgb(94,0,0); text-align: center;" >
+
+<hr>
+  <h2> OUR BEST SELLING PRODUCTS</h2>
+  <hr>
+  <H5>These are some of our all time favourite exotic products..Do Check Them Out!!</H5>
+ 
+</section>
+
+
+
+<section class="product">
+    <div class="container">
+  
+        <div class="row">
+            <div class="item features-image сol-12 col-md-6 col-lg-4" *ngFor="let item of product">
+                <div class="card" style="width: 20rem;background-color: rgb(214, 209, 209);;margin-top: 10px;">
+                    <div class="item-wrapper">
+                        <div class="card-img-top">
+                            <img class="card-img-top" src="/assets/product_images/{{item.product_imgl}}" alt="" title="" style="height: auto;width: 20rem;">
+                        </div>
+                        <div class="card-body">
+                          <center> <h5 class="card-title align-center" style="color: rgb(94,0,0);">{{item.product_title | custompipe3 | custompipe2}}</h5></center>
+                           <center><p class="mt-4 align-center"  aria-hidden="true">{{item.product_price | currency:'INR'}}</p> </center> 
+                            <div class="item-content">
+                               <p appHighlight>
+                                <i aria-hidden="true"></i> {{item.product_desc}}
+                              </p>
+                            </div>
+                           
+                            <div class="content">
+                             <center><button type="button" class="btn" (click)="inc(item)"><i class="fa fa-plus"></i></button>
+                              &nbsp;
+                               <span>{{item.product_qty}}</span>
+                               &nbsp;
+                               <button type="button" class="btn" (click)="dec(item)"><i class="fa fa-minus"></i></button>
+                              </center>
+                              </div>
+                          <center><button type="button"  class="cart_btn" (click)="addCart(item)">Add To Cart</button> </center> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+  </section>
+
+ <section>
+
+
+<hr>
+
+<h3 style="color: rgb(94,0,0); text-align: center ">Customize your Cake..</h3>
+<hr>
+<div style="text-align: center">
+  <form>      
+    <div>
+      <input type="file" name="images" multiple (change)="selectMultipleImage($event)" />
+    </div>
+    <br>
+    <div>
+      <button type="submit" (click)="onMultipleSubmit()">Upload Files</button>
+      
+    </div>
+    <br>
+    <strong>{{ _msg }}</strong>
+  </form>
+</div>
+</section>

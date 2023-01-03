@@ -1,0 +1,79 @@
+
+
+
+
+    <div class="navbar-header"><!-- navbar-header Begin -->
+               
+        <a href="index.html" class="navbar-brand home"><!-- navbar-brand home Begin -->
+            
+            <img src="assets/images\images/lavista.png" alt="Lavista Logo" class="hidden-xs" style="height: 58px ; width: 70px">
+           
+            
+            
+        </a><!-- navbar-brand home Finish -->
+
+       
+       
+        
+    </div><!-- navbar-header Finish -->
+    
+  <div id="top"><!-- Top Begin -->
+       
+    <div class="container"><!-- container Begin -->
+        
+        <div class="col-md- offer"><!-- col-md-6 offer Begin -->
+            
+            <a href="#" class="btn  btn-sm" style="height:auto">
+                
+              <b>  </b>
+            </a>
+           
+            
+        </div><!-- col-md-6 offer Finish -->
+        <div class="container"><!-- container Begin -->
+            <div class="col-md-12 text-right">
+                <div class="cart_icon" routerLink="/cart" routerLinkActive="activeS">
+                   
+                   <div class="cart_value">
+                    <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+                       {{cartItem}}
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class = "container-fluid">
+        <div class="col-md-8"><!-- col-md-6 Begin -->
+            
+            <ul class="menu"><!--register cmenu Begin -->
+            
+                <li><a routerLink="/homepage" routerLinkActive="activeS"><b>HOME</b></a></li>
+                <li><a routerLink="/product" routerLinkActive="activeS"><b>SHOP</b></a></li>
+                <li><a routerLink="/login" routerLinkActive="activeS"><b>LOGIN</b></a></li>
+                
+                <li><a routerLink="/register" routerLinkActive="activeS"><b>REGISTER</b></a></li>
+                <li><a routerLink="/feedback" routerLinkActive="activeS"><b>FEEDBACK</b></a></li>
+                <li><a routerLink="/contact" routerLinkActive="activeS"><b>ABOUT US</b></a></li>
+                
+            
+              
+            </ul><!-- menu Finish -->
+        
+ 
+            
+        </div>
+    </div>  
+        <!-- col-md-6 Finish -->
+
+        <div class="col-md-6" *ngIf="currentUser">
+            <a class="nav-item nav-link" (click)="logout()">Logout</a>
+           </div>
+        
+       
+    </div><!-- container Finish -->
+    
+</div><!-- Top Finish -->
+
+
+
+
+
